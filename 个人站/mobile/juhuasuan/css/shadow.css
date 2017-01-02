@@ -1,0 +1,9 @@
+body,html{}
+.shadow{padding:0 0.5rem 4.1rem 0.5rem;background: #333;margin-left:2rem;font-size: 0.675rem;min-height: 800px;}
+.shadow .top{display:flex;border-bottom: 0.05rem solid #404040;height: 2.6rem;color:#fff;}
+.shadow .top li{width: 50%;box-sizing: border-box;flex:1;line-height: 2.6rem;text-align: center;}
+.shadow a{display:block;color:#fff;}
+.shadow .content{display:flex;}
+.shadow .content ul{padding-left: 1.125rem;width: 50%;}
+.shadow .content li{box-sizing: border-box;flex:1;line-height: 2rem;padding-top:0.35rem;}
+.shadow .top li.on{border-bottom: 0.1rem solid #fff;}

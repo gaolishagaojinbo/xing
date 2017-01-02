@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	body{ background:#000;}
+	*{ padding:0; margin:0; list-style:none;}
+	ul{ width:133px; height:200px; position:absolute; top:50%; left:50%; margin-top:-200px; margin-left:-66px; transform-style:preserve-3d; transform:rotateX(-15deg);}
+	li{ width:133px; height:200px; background:url(img/1.jpg); transition:1s all ease; position:absolute; box-shadow:0 0 20px #FFF; -webkit-box-reflect:below 20px -webkit-linear-gradient(bottom,rgba(0,0,0,0.2),rgba(0,0,0,0) 20%)}
+
+
+</style>
+<script>
+	window.onload=function(){
+		var oBox=document.querySelector('.box');
+
+		var N=11;
+		for(var i=0; i<N;i++){
+			var oLi=document.createElement('li');
+			oLi.style.backgroundImage='url(img/'+(i+1)+'.jpg)';
+
+			oBox.appendChild(oLi);
+		}
+
+		var aLi=oBox.children;
+
+		for(var i=0; i<aLi.length;i++){
+			aLi[i].style.transition='0.5s all ease '+(N-i)*200+'ms';
+
+			(function(index){
+				setTimeout(function(){
+					aLi[index].style.transform='perspective(800px)  rotateY('+(360/N*index)+'deg) translateZ(340px)';
+				},0);
+			})(i);
+		}
+
+
+
+		var y=0;
+		var x=-15;
+		var iSpeedX=0;
+		var lastX=0;
+		var iSpeedY=0;
+		var lastY=0;
+		var timer=null;
+
+		document.onmousedown=function(ev){
+			clearInterval(timer);
+			var disX=ev.clientX-y;
+			var disY=ev.clientY-x;
+			document.onmousemove=function(ev){
+				y=ev.clientX-disX;
+				x=ev.clientY-disY;
+				change(y/3,x);
+
+				iSpeedX=ev.clientX-lastX;
+				lastX=ev.clientX;
+				iSpeedY=ev.clientY-lastY;
+				lastY=ev.clientY;
+			}
+			document.onmouseup=function(){
+				document.onmousemove=document.onmouseup=null;
+				timer=setInterval(function(){
+					iSpeedX*=0.95;
+					iSpeedY*=0.95;
+					y+=iSpeedX;
+					x+=iSpeedY;
+					change(y/3,x);
+					if(Math.abs(iSpeedX)<1 && Math.abs(iSpeedY)<1){
+						clearInterval(timer);
+					}
+				},30);
+			};
+			return false;
+		}
+
+		aLi[0].addEventListener('transitionend',function(){
+			change(y);
+		},false);
+
+		function change(y,x){
+
+			oBox.style.transform='rotateX('+-x/20+'deg)';
+
+			for(var i=0; i<aLi.length;i++){
+				aLi[i].style.transition='none';						//都是在继承的基础上的；
+				aLi[i].style.transform='perspective(800px)  rotateY('+(360/N*i+y)+'deg) translateZ(340px)';
+
+				var scale= Math.abs(Math.abs((360/N*i+y)%360)-180)/180;
+
+				console.log(scale);
+				scale<0.4 && (scale=0.4);
+				aLi[i].style.opacity=scale;
+			}
+		}
+	};
+</script>
+</head>
+
+<body>
+	<ul class="box">
+    </ul>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

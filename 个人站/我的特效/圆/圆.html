@@ -1,0 +1,103 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<meta name="description" content="智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>智能社— http://www.zhinengshe.com</title>
+<style>
+#box{ width:300px; height:300px; border:2px solid red; border-radius:50%; position:relative; left:100px; top:100px; }
+span{ position:absolute; left:50%; top:0; margin:-15px 0 0 -15px; width:30px; height:30px; background:green; border-radius:50%; }
+</style>
+<script>
+function d2a(n){ 		//角度转弧度
+	return n*Math.PI/180;
+}
+function a2d(n){ 		//弧度转角度
+	return n*180/Math.PI;
+}
+window.onload=function (){
+	var oBox=document.getElementById('box');
+	
+	var R=oBox.offsetWidth/2;
+	var N=10;
+	
+	for(var i=0; i<N; i++){
+		var oS=document.createElement('span');
+		
+		oBox.appendChild(oS);
+	}
+	
+	var aS=oBox.children;
+	
+	var bOk=true;
+	document.onclick=function (){
+		if(bOk){
+			for(var i=0; i<aS.length; i++){
+				move(aS[i],i*360/N);
+			}
+		}else{
+			for(var i=0; i<aS.length; i++){
+				move(aS[i],0);
+			}
+		}
+		bOk=!bOk;
+	};
+	
+	function move(obj,iTarget){
+		var start=obj.a||0;
+		var dis=iTarget-start;
+		var count=Math.floor(1000/30);
+		var n=0;
+		
+		clearInterval(obj.timer);
+		obj.timer=setInterval(function (){
+			n++;
+			
+			var b=1-n/count;
+			
+			var cur=start+dis*(1-Math.pow(b,3));
+			
+			var x=R+Math.sin(d2a(cur))*R;
+			var y=R-Math.cos(d2a(cur))*R;
+			
+			obj.a=cur;
+			obj.style.left=x+'px';
+			obj.style.top=y+'px';
+			
+			if(n==count){
+				clearInterval(obj.timer);
+			}
+		},16);
+	}
+};
+</script>
+</head>
+
+<body>
+	<div id="box"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

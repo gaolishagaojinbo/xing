@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{ margin:0; padding:0; list-style:none;}
+        #box{ overflow:hidden; margin:100px auto; width:480px; height:270px; border:1px solid #000; position:relative;}
+        #box li{ width:480px; height:270px; position:absolute; left:0; top:0;}
+        #box li img{ width:480px; height:270px;}
+    </style>
+    <script src="../照片墙/tween.js"></script>
+    <script>
+        window.onload=function(){
+            var oUl=document.getElementById('box');
+            var aLi=oUl.children;
+            var oW=480;
+            var w1=34;
+
+            for(var i=1;i<aLi.length;i++){
+                aLi[i].style.left=oW-(aLi.length-i)*w1+'px';
+//                aLi[i].style.left=w1*i+'px'
+            }
+            for(var i=0;i<aLi.length;i++){
+                ;(function(index){
+                    aLi[i].onmouseover=function(){
+                        for(var i=0;i<aLi.length;i++){
+                            if(index>=i){
+                                tween(aLi[i],{left:w1*i});
+//                                aLi[i].style.left=w1*i+'px';
+                            }else{
+                                tween(aLi[i],{left:oW-(aLi.length-i)*w1});
+//                                aLi[i].style.left=oW-(aLi.length-i)*w1+'px';
+                            }
+                        }
+                    }
+                })(i);
+            }
+        }
+    </script>
+    <script>
+    </script>
+</head>
+<body>
+<ul id="box">
+    <li><img src="img/1.jpg" alt=""></li>
+    <li><img src="img/2.jpg" alt=""></li>
+    <li><img src="img/3.jpg" alt=""></li>
+    <li><img src="img/4.jpg" alt=""></li>
+    <li><img src="img/5.jpg" alt=""></li>
+</ul>
+</body>
+</html>

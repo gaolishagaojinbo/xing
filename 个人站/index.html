@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='app'>
+    <head>
+        <meta charset="utf-8">
+   <title>高李莎的个人站</title>
+   <link rel="stylesheet" href="css/base.css" />
+   <link rel="stylesheet" href="css/index.css" />
+   <link rel="stylesheet" href="css/swiper.min.css" />
+   <link rel="stylesheet" href="css/animate.css" />
+   <script src="js/move.index.js"></script>
+   <script src="js/move.js"></script>
+   <script src="js/swiper.min.js"></script>
+   <script src="js/angular.js"></script>
+    </head>
+    <body>
+        <div class="perSonal" id="perSonal">
+            <header>
+                <ul class="clearfix" id="nav">
+                    <li><a href="#perSonal">首页</a></li>
+                    <li><a href="#myEffects">我的特效</a></li>
+                    <li><a href="#myWork">我的作品</a></li>
+                    <li><a href="">我的移动端</a></li>
+                    <li><a href="#describe">联系我</a></li>
+                    <li class="last"></li>
+                </ul>
+            </header>
+
+            <div class="animated bounceInDown jump">
+                <span>Welcome To My World</span>
+            </div>
+
+            <section>
+                <div class="section">
+
+                    <div class="l">
+
+                    </div>
+                    <div class="page">
+                        <span class="front"></span>
+                        <span class="back"></span>
+                    </div>
+                    <div class="r"></div>
+                </div>
+                 <div class="describe" id="describe">
+                            <p class="animated name">我叫高李莎</p>
+                            <p class="age  animated">年龄：24岁</p>
+                            <p id="tel" class="tel  animated">手机：13453923386</p>
+                            <p id="email" class="email  animated">邮箱：1625506827@qq.com</p>
+                            <p class="des  animated">自我评价：我是一名责任心强的人，喜欢与人交流，性格开朗，现在从事前端行业，希望成为一名优秀的前端开发师</p>
+                </div>
+            </section>
+        </div>
+        <!-- 我的特效 -->
+        <div class="myEffects" id="myEffects">
+            <p class="des">MY EFFECTS</p>
+            <input type="button" value="亲，点我能收缩哦" class="move-Btn" />
+            <ul class="clearfix effect">
+                <li>
+                    <a href="我的特效/3d切换图片/3d切换.html" target="_blank">3d图片切换</a>
+                </li>
+                <li>
+                    <a href="我的特效/照片墙/照片墙.html" target="_blank">照片墙</a>
+                </li>
+                <li>
+                    <a href="我的特效/3d图片环/3d图片环.html" target="_blank">3d图片环</a>
+                </li>
+                <li>
+                    <a href="我的特效/爆炸效果/爆炸效果.html" target="_blank">爆炸</a>
+                </li>
+                <li>
+                    <a href="我的特效/比例拖动/比例拖动.html" target="_blank">比例拖动</a>
+                </li>
+                <li>
+                    <a href="我的特效/圆/圆.html" target="_blank">圆</a>
+                </li>
+                <li>
+                    <a href="我的特效/手风琴/手风琴.html" target="_blank">手风琴</a>
+                </li>
+                <li>
+                    <a href="我的特效/3d切换图片/3d切换.html" target="_blank">3d切换</a>
+                </li>
+                <li>
+                    <a href="我的特效/立方体/立方体.html" target="_blank">立方体</a>
+                </li>
+            </ul>
+
+        </div>
+
+        <!-- 我的作品 -->
+        <div class="myWork" id="myWork">
+            <p>MY WORK</p>
+            <ul class="clearfix work">
+                <li>
+                    <img src="img/mi.jpg" alt="" />
+                    <a href="demo/小米/小米.html" target="_blank">
+                        <span>小米</span>
+                    </a>
+                </li>
+                <li>
+                    <img src="img/spirt.jpg" alt="" />
+                    <a href="demo/灵魂回响/spirit.html" target="_blank">
+                        <span>灵魂回响</span>
+                    </a>
+                </li>
+                <li>
+                    <img src="img/wy.jpg" alt="" />
+                    <a href="demo/网易/NetEase.html" target="_blank">
+                        <span>网易</span>
+                    </a>
+                </li>
+                <li>
+                    <img src="img/beautiful.jpg" alt="" />
+                    <a href="demo/美丽说/美丽说.html" target="_blank">
+                        <span>美丽说</span>
+                    </a>
+                </li>
+                <li>
+                    <img src="img/mt.jpg" alt="" />
+                    <a href="demo/美团/beau.html" target="_blank">
+                        <span>美团</span>
+                     </a>
+                </li>
+                <li>
+                    <img src="img/music.jpg" alt="" />
+                    <a href="demo/音悦台/music.html" target="_blank">
+                        <span>音悦台</span>
+                    </a>
+
+                </li>
+            </ul>
+            <!-- Swiper -->
+
+        </div>
+        <!--移动端 -->
+       <!--  <div class="mobile">
+            <p class="right"><a href="mobile/juhuasuan/index.html">111</a></p>
+            <p class="left"><a href=""></a></p>
+            <p class="front"><a href=""></a></p>
+            <p class="back"><a href=""></a></p>
+            <p class="top"><a href=""></a></p>
+            <p class="bottom"><a href=""></a></p>
+        </div>
+ -->
+
+        <!-- 交互 -->
+        <div class="interactive" ng-controller="message">
+        <!--留言-->
+             <div class="message">
+                <textarea name="textarea" ng-model="content"></textarea>
+                <div class="message-btn">
+                    <input type="button" value="说点什么呗" ng-click="send()" />
+                </div>
+            </div>
+        <!--已留-->
+            <div class="content">
+                <ul>
+                    <li ng-repeat='item in data'>{{item.content}}</li>
+                </ul>
+            </div>
+        </div>
+        <footer>
+            <a href="#tel">手机</a>
+            <a href="#">知乎</a>
+            <a href="#eamil">邮箱</a>
+        </footer>
+    </body>

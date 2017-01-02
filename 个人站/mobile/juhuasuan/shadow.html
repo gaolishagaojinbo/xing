@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/shadow.css" />
+    <script src="js/rem.js"></script>
+    <script>
+        document.addEventListener(function(){
+            var oTop=document.querySelector('top');
+            var aLi=document.querySelectorAll('.top li');
+
+            for(var i=0;i<aLi.length;i++){
+                // aLi[i].onmouseover=function(){
+
+                //     for(var  i=0;i<aLi.length;i++){
+                //         aLi[i].classList.remove('on');
+                //     }
+                //     this.classList.add('on');
+                // }
+                aLi[i].addEventListener('touchstart',function(){
+                    for(var  i=0;i<aLi.length;i++){
+                        aLi[i].classList.remove('on');
+                    }
+                    this.classList.add('on');
+                },false);
+            }
+        },false);
+
+
+    </script>
+    </head>
+    <body>
+        <div class="shadow ">
+            <ul class="top clearFix">
+                <li class="fl on">分类</li>
+                <li class="fl">地区</li>
+            </ul>
+            <div class="content clearFix">
+                <ul class="fl">
+                    <li>
+                        <a href="#">全部</a>
+                        <a href="#">美食</a>
+                        <a href="#">休闲</a>
+                        <a href="#">电影</a>
+                        <a href="#">生活服务</a>
+                        <a href="#">丽人</a>
+                        <a href="#">卡券</a>
+                        <a href="#">房产汽车</a>
+                    </li>
+                </ul>
+                <ul class="fl">
+                    <li>
+                        <a href="#">摄影</a>
+                        <a href="#">培训</a>
+                        <a href="#">旅游</a>
+                        <a href="#">酒店</a>
+                        <a href="#">粮油生鲜</a>
+                        <a href="#">汽车服务</a>
+                        <a href="#">通讯 </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>

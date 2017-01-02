@@ -1,0 +1,58 @@
+
+html{ font-size:20px; }
+
+header{ background:-webkit-linear-gradient(#fff,#ebebeb); position:relative; }
+.back{ background:url(../images/back.png) no-repeat; width:3.2rem; height:1.55rem; background-size:contain; position:absolute; left:0.5rem; top:0.5rem; }
+.logo{ height:2.5rem; background:url(../images/logo.png) no-repeat center; background-size:3.7rem 1rem; }
+
+.banner{ width:16rem; height:6.7rem; }
+.banner img{ width:100%; height:100%; }
+.btn{ text-align:center; margin-top:0.5rem; }
+.btn span{ display:inline-block; width:0.25rem; height:0.25rem; background:#ccc; border-radius:50%; vertical-align:top; margin:0 0.125rem; }
+.btn span.on{ background:#f00; }
+
+nav li{ width:25%; text-align:center; float:left; }
+nav a{ width:100%; height:100%; display:block; background:url(../images/nav1.png) no-repeat top; padding-top:2.4rem; margin-bottom:1rem; font-size:0.55rem; color:#999; background-size:2rem 2rem; }
+.top{padding:0 0.5rem;}
+.top .hot{padding:0.6rem 0 0.5rem ;border-bottom: .1rem solid #dcdcdc;font-size: 0.65rem;color:#333;line-height: 0.75rem;height: 0.75rem;}
+.top .hot div:nth-child(1){border-left:0.1rem solid #d51938;padding-left:0.425rem;}
+.top .top-list{margin-top:0.775rem;}
+.top .top-list li{margin-bottom:0.5rem;}
+.top .top-list li a{display:block;overflow: hidden;}
+.top .top-list li span{float: left;width: 1.5rem;height: 3rem;background: #e00202;text-align: center;line-height: 3rem;}
+.top .top-list li:nth-child(2) span{background: #ff4800;}
+.top .top-list li:nth-child(3) span{background: #ff7300;}
+.top .top-list li:nth-child(4) span{background: #ff9d00;}
+.top .top-list li:nth-child(5) span{background: #ffa800;}
+.top .top-list li:nth-child(6) span{background: #ffb400;}
+.top .top-list li:nth-child(7) span{background: #ffba00;}
+.top .top-list li:nth-child(8) span{background: #fcd000;}
+.top .top-list li:nth-child(9) span{background: #ffd719;}
+.top .top-list li:nth-child(10) span{background: #ffe152;}
+.top-list li img{width: 4.5rem;height: 3rem;float: left;}
+.top-list li .list-r{background: #f4f4f4;color:#999;float: left;overflow: hidden;}
+.top-list li .sale{float: left;padding:0.7rem 0 0.7rem 0.7rem;font-size: 0.6rem;height: 1.55rem;width: 4.85rem;}
+.top-list li .sale i:nth-child(1){margin-bottom:0.3rem;display:block;}
+.top-list li .sale i b{text-decoration: line-through;}
+.top-list li  strong{float: right;color:#d51938;margin:1rem .2rem .7rem 0;background: url(../images/jt.png) no-repeat right center ;background-size:0.325rem .55rem;padding-right:.5rem;}
+.more{padding:0 0.5rem 0.5rem 0.5rem;}
+.more h3{font-size:0.6rem;color:#666;text-align: center;height: 2rem;background: #f5f5f5;line-height: 2rem;margin-bottom: .5rem;}
+.more .bottom-left{width: 25%;box-sizing: border-box;height: 8.75rem;background: url(../images/mode1.png) no-repeat left bottom #da3809;background-size:2.55rem 3.325rem;}
+.more .more-list{border:1px solid #eee;width: 75%;box-sizing: border-box;}
+.more .more-list li{width: calc(100% / 3);float: left;box-sizing: border-box;border:1px solid #eee;border-top:none;border-left:none;height:2.175rem ;line-height: 2.175rem;text-align: center;}
+.more .more-list li a{color:#999;font-size: 0.6rem;}
+.mode2 .bottom-left{background: url(../images/mode2.png) no-repeat left bottom #18a78c;}
+.mode3 .bottom-left{background: url(../images/mode3.png) no-repeat left bottom #838383;}
+.apple .more-list{width: 100%;}
+.apple .more-list li{width:calc(100% / 3 );height: 3.95rem;}
+.apple .more-list li a{display:block;width: 100%;height: 100%;background: url(../images/apple.png) no-repeat center 0.725rem ;padding-top:2.725rem;background-size:1.2rem 1.25rem;font-size: .6rem;color:#999;line-height: .6rem;}
+.apple .more-list li:nth-child(2) a{background: url(../images/andirod.png) no-repeat center 0.725rem ;background-size:1.2rem 1.25rem;}
+.apple .more-list li:nth-child(3) a{background: url(../images/suggest.png) no-repeat center 0.725rem ;background-size:1.2rem 1.25rem;}
+.login{height: 2.2rem;background: #f8f8f8;font-size: 0.65rem;padding:0 .7rem 0 .5rem;}
+.login a{color:#333;display:block;line-height: 2.2rem;}
+.login a:nth-child(1){margin:0 1.2rem 0 .25rem;}
+.login a:nth-child(3){background: url(../images/top.png) no-repeat right center;padding-right:0.925rem;}
+footer{text-align: center;background: #eee;}
+footer .pc{padding:1.05rem 0 .8rem;font-size: .65rem;}
+footer .pc a{color:#333;line-height: .65rem;}
+footer p{color:#999;font-size: 0.5rem;padding-bottom: .6rem;}

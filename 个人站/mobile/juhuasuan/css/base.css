@@ -1,0 +1,15 @@
+/*
+* @Author: anchen
+* @Date:   2016-12-22 22:34:59
+* @Last Modified by:   anchen
+* @Last Modified time: 2016-12-22 22:35:03
+*/
+*{ margin:0; padding:0; }
+body{font-family: '微软雅黑';}
+li{ list-style:none; }
+a{ text-decoration:none; }
+img{ vertical-align:top; }
+.fl{ float:left; }
+.fr{ float:right; }
+.clearFix:after{ content:''; display:block; clear:both; }
+em,strong,b,i{font-weight: normal;font-style: normal;}

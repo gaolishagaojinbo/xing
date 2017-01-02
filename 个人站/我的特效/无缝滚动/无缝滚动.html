@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{padding: 0; margin: 0; list-style:none;}
+	#box{width:600px; height:400px; border:1px solid #000; margin:50px auto; position:relative; overflow:hidden;}
+	ul{position:absolute; left:0; top:0;}
+	ul li{width:600px; height:400px; float:left;}
+	img{width: 600px; height:400px; vartical-align:top;}
+	ol{position:absolute; left:50%; bottom:0; width:250px; margin-left:-125px;}
+	ol li{width:30px; height:30px; background: orange; border-radius:50%; float:left; margin:10px;}
+	ol li.on{background: #ccc;}
+	#box a{position:absolute; width:50px; height:80px;background: #000; z-index:2; text-align:center; line-height:80px; top:50%; margin-top:-40px; color:#fff; display: none;}
+	#left{left:0;}
+	#right{right:0;}
+	</style>
+	<script>
+		window.onload=function(){
+			var oBox=document.getElementById('box');
+			var oL=document.getElementById('left');
+			var oR=document.getElementById('right');
+			var oUl=oBox.children[2];
+			var aLi=oUl.children;
+			var oOl=oBox.children[3];
+			var aBtn=oOl.children;
+			var iNow=0;
+			var timer=null;
+			//布局转化
+			oUl.innerHTML+=oUl.innerHTML;
+			oUl.style.width=aLi[0].offsetWidth*aLi.length+'px';
+			var w=oUl.offsetWidth/2;
+			oBox.onmouseover=function(){
+				oL.style.display='block';
+				oR.style.display='block';
+			};
+			oBox.onmouseout=function(){
+				oL.style.display='none';
+				oR.style.display='none';
+			};
+
+			for(var i=0;i<aBtn.length;i++){
+				(function(index){
+					aBtn[i].onclick=function(){
+						iNow=Math.floor(iNow/aBtn.length)*aBtn.length+index;
+						tab();
+
+					}
+				})(i)
+			}
+
+			//点击next
+			oR.onclick=function(){
+
+				iNow++;
+				document.title=iNow;
+				tab();
+			};
+			//点击left
+			oL.onclick=function(){
+				iNow--;
+				tab();
+			};
+			function tab(){
+				clearInterval(timer);
+				for(var i=0;i<aBtn.length;i++){
+					aBtn[i].className='';
+				}
+				aBtn[(iNow%aBtn.length+aBtn.length)%aBtn.length].className='on';
+				startMove(oUl,-iNow*aLi[0].offsetWidth);
+
+
+			}
+			var left=0;
+			function startMove(obj,iTarget){
+				var count=Math.floor(1000/30);
+				var start=left;
+				var dis=iTarget-start;
+				var n=0;
+				timer=setInterval(function(){
+					n++;
+					var a=1-n/count;
+					left=start+dis*(1-Math.pow(a,3));
+					obj.style.left=(left%w-w)%w+'px';
+					if(n==count){
+						clearInterval(timer);
+					}
+				},30);
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="box">
+		<a href="javascript:;" id="left">left</a>
+		<a href="javascript:;" id="right">next</a>
+		<ul>
+			<li>
+				<img src="img/0.jpg" alt="">
+			</li>
+			<li>
+				<img src="img/1.jpg" alt="">
+			</li>
+			<li>
+				<img src="img/2.jpg" alt="">
+			</li>
+			<li>
+				<img src="img/3.jpg" alt="">
+			</li>
+			<li>
+				<img src="img/4.jpg" alt="">
+			</li>
+		</ul>
+		<ol>
+			<li class="on"></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ol>
+	</div>
+</body>
+</html>
